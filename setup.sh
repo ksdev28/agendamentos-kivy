@@ -13,6 +13,8 @@ conda env create --file environment.yml
 source $(conda info --base)/etc/profile.d/conda.sh
 conda activate nome_do_seu_ambiente
 
+# Atualiza o pip (última versao)
+pip install --upgrade pip
 # Instalar dependências adicionais, se necessário
 pip install kivy kivymd
 
