@@ -1,5 +1,5 @@
 
-import sqlite3
+""" import sqlite3
 
 class Database:
     def __init__(self, db_name):
@@ -62,3 +62,4 @@ class Database:
                           JOIN profissionais p ON a.profissional_id = p.id 
                           JOIN servicos s ON a.servico_id = s.id''')
         return cursor.fetchall()
+"""
