@@ -1,9 +1,35 @@
+# Projeto Agendamentos Kivy
+
+Aplicativo Kivy para gerenciar agendamentos.
+
+## Pré-requisitos
+
+- **Anaconda/Miniconda:** Necessário para o ambiente Conda.
+- **Git:** Para clonar o repositório.
+
 ## Configuração do Ambiente
 
-    Para configurar o ambiente de desenvolvimento, basta executar o script `setup.sh`:
+Execute o script `setup.sh` para configurar o ambiente de desenvolvimento.
 
-    Para tornar o arquivo executável execute o comando:
-    chmod +x setup.sh
+### Passos
+
+1. **Executar o Script:**
+
+   bash
+   ./setup.sh
+   
+
+## Executar o Projeto
+
+Com o ambiente configurado, execute:
 
 bash
-  ./setup.sh
+python main.py
+
+
+## Atualizar o Ambiente
+
+Para atualizar:
+
+bash
+conda env update --file environment.yml --prune
