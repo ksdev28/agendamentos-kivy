@@ -1,33 +1,72 @@
-# Projeto Agendamentos Kivy
+# 📅 Projeto Agendamentos Kivy
 
-Aplicativo Kivy para gerenciar agendamentos.
+Aplicativo desenvolvido com **Kivy** e **KivyMD** para gerenciamento de agendamentos.
 
-## Pré-requisitos
+---
 
-- **Anaconda/Miniconda:** Necessário para o ambiente Conda.
-- **Git:** Para clonar o repositório.
+## ✅ Pré-requisitos
 
-## Configuração do Ambiente
+Certifique-se de ter os seguintes programas instalados:
 
-Execute o script `setup.sh` para configurar o ambiente de desenvolvimento.
+- [Anaconda ou Miniconda](https://www.anaconda.com/)
+- [Git](https://git-scm.com/)
 
-### Passos
+---
 
-1. **Executar o Script:**
+## ⚙️ Configuração do Ambiente
 
-**Torna script executável**
+O projeto já vem com um arquivo `environment.yml` e um script automático (`setup.sh`) que facilita a configuração do ambiente Conda.
+
+### Passos para configurar:
+
+1. **Clone o repositório (se ainda não tiver clonado):**
+
+   ```bash
+   git clone https://github.com/ksdev28/Agendamentos-kivy.git
+   cd Agendamentos-kivy
+   ```
+
+2. **Torne o script executável (Linux/Mac):**
+
+   ```bash
    chmod +x setup.sh
-   
+   ```
+
+3. **Execute o script:**
+
+   ```bash
    ./setup.sh
-   
-## Executar o Projeto
+   ```
 
-Com o ambiente configurado, execute:
+---
 
+## ▶️ Executar o Projeto
+
+Após a configuração do ambiente, ative-o (caso ainda não esteja ativo):
+
+```bash
+conda activate agendamentos-kivy
+```
+
+E então, execute:
+
+```bash
 python main.py
+```
 
-## Atualizar o Ambiente
+---
 
-Para atualizar:
+## 🔄 Atualizar o Ambiente
 
+Se o `environment.yml` for atualizado e você quiser aplicar as mudanças:
+
+```bash
 conda env update --file environment.yml --prune
+```
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Kelven Sousa**  
+[github.com/ksdev28](https://github.com/ksdev28)
