@@ -15,7 +15,8 @@ Execute o script `setup.sh` para configurar o ambiente de desenvolvimento.
 
 1. **Executar o Script:**
 
-   chmod +x setup.sh **Torna script executável**
+**Torna script executável**
+   chmod +x setup.sh
    
    ./setup.sh
    
