@@ -15,21 +15,18 @@ Execute o script `setup.sh` para configurar o ambiente de desenvolvimento.
 
 1. **Executar o Script:**
 
-   bash
+   chmod +x setup.sh **Torna script executável**
+   
    ./setup.sh
    
-
 ## Executar o Projeto
 
 Com o ambiente configurado, execute:
 
-bash
 python main.py
-
 
 ## Atualizar o Ambiente
 
 Para atualizar:
 
-bash
 conda env update --file environment.yml --prune
