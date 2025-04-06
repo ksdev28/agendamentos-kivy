@@ -103,8 +103,10 @@ class SistemaAgendamento(MDBoxLayout):
         self.historico_tab = Tab(title='Histórico')
         self.historico_tab.add_widget(MDLabel(text='Histórico de Atendimentos', halign='center'))
         
-        self.historico_view = MDScrollView(size_hint=(1, None), size=(400, 200))
+        self.historico_view = MDScrollView(size_hint=(1, 1))
         self.historico_content = GridLayout(cols=1, size_hint_y=None)
+        self.historico_content.padding = [10, 10]
+        self.historico_content.spacing = 10
         self.historico_content.bind(minimum_height=self.historico_content.setter('height'))
         self.historico_view.add_widget(self.historico_content)
         self.historico_tab.add_widget(self.historico_view)
