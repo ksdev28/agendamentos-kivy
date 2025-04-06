@@ -1,6 +1,7 @@
 
 import sqlite3
 
+
 class Database:
     def __init__(self, db_name):
         self.conn = sqlite3.connect(db_name)
@@ -20,14 +21,17 @@ class Database:
     def cadastrar_profissional(self, nome, servicos):
         with self.conn:
             cursor = self.conn.cursor()
-            cursor.execute('INSERT INTO profissionais (nome) VALUES (?)', (nome,))
+            cursor.execute(
+                'INSERT INTO profissionais (nome) VALUES (?)', (nome,))
             profissional_id = cursor.lastrowid
             for servico in servicos:
-                cursor.execute('INSERT INTO servicos (nome, profissional_id) VALUES (?, ?)', (servico.strip(), profissional_id))
+                cursor.execute(
+                    'INSERT INTO servicos (nome, profissional_id) VALUES (?, ?)', (servico.strip(), profissional_id))
 
     def cadastrar_horario(self, hora):
         with self.conn:
-            self.conn.execute('INSERT INTO horarios (hora) VALUES (?)', (hora,))
+            self.conn.execute(
+                'INSERT INTO horarios (hora) VALUES (?)', (hora,))
 
     def get_profissionais(self):
         cursor = self.conn.cursor()
@@ -36,7 +40,8 @@ class Database:
 
     def get_servicos(self, profissional_id):
         cursor = self.conn.cursor()
-        cursor.execute('SELECT id, nome FROM servicos WHERE profissional_id=?', (profissional_id,))
+        cursor.execute(
+            'SELECT id, nome FROM servicos WHERE profissional_id=?', (profissional_id,))
         return cursor.fetchall()
 
     def get_horarios(self):
