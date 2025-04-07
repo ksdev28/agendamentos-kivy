@@ -108,13 +108,4 @@ def main():
         ]
         find_and_run(maybes, remains)
 
-    if failures:
-        print("The following scripts failed")
-        for failure in failures:
-            print(">", failure)
-        sys.exit(1)
-    print("All tests passed \\o/")
 
-
-if __name__ == "__main__":
-    main()
