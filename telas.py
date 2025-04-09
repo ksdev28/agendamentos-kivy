@@ -7,6 +7,7 @@ from kivymd.uix.tab import MDTabs, MDTabsBase
 from kivymd.uix.menu import MDDropdownMenu
 from kivymd.uix.scrollview import MDScrollView
 from kivymd.uix.pickers import MDDatePicker
+from kivymd.uix.dialog import MDDialog
 from kivy.uix.gridlayout import GridLayout
 from kivymd.uix.card import MDCard
 from kivy.metrics import dp
@@ -68,7 +69,7 @@ class SistemaAgendamento(MDBoxLayout):
         self.servico_input = MDTextField(hint_text='Serviços', size_hint_x=1, pos_hint={'center_x': 0.5})
         cadastro_card.add_widget(self.servico_input)
 
-        self.cadastrar_button = MDRaisedButton(text='Cadastrar', pos_hint={'center_x': 0.5}, md_bg_color=(0.2, 0.6, 0.86, 1), text_color=(1, 1, 1, 1))
+        self.cadastrar_button = MDRaisedButton(text='Cadastrar', pos_hint={'center_x': 0.5}, md_bg_color=(0.40,0.23,0.72,1), text_color=(1, 1, 1, 1))
         self.cadastrar_button.bind(on_press=self.cadastrar)
         cadastro_card.add_widget(self.cadastrar_button)
 
@@ -77,7 +78,7 @@ class SistemaAgendamento(MDBoxLayout):
 
         # Cadastro de Horários Tab
         self.horarios_tab = Tab(title='Horários')
-        horario_card = MDCard(orientation='vertical', padding=20, spacing=20, size_hint=(1, 1), height=dp(200), pos_hint={'center_x': 0.5})
+        horario_card = MDCard(orientation='vertical', padding=20, spacing=20, size_hint=(1, 0), height=dp(200), pos_hint={'center_x': 0.5},)
         horario_card.add_widget(MDLabel(text='Cadastrar Horário (HH:MM)', halign='center', theme_text_color="Custom", text_color=(1, 1, 1, 1), font_style="H6"))
         self.horario_input = MDTextField(hint_text='Horário', size_hint_x=1, pos_hint={'center_x': 0.5})
         horario_card.add_widget(self.horario_input)
@@ -93,11 +94,12 @@ class SistemaAgendamento(MDBoxLayout):
         self.agendamento_tab = Tab(title='Agendamento')
         agendamento_card = MDCard(
             orientation='vertical',
-            padding=20,
-            spacing=20,
-            size_hint=(1, None),
-            height=dp(500),
-            pos_hint={'center_x': 0.5}
+            padding=50,
+            spacing=40,
+            size_hint=(None, None),  # Garantir que o Card tenha tamanho fixo
+            width=dp(400),  # Largura do card fixada para controle
+            height=dp(450),  # Ajuste a altura conforme necessário
+            pos_hint={'center_x': 0.5}  # Centralização do card
         )
 
         # Título da aba de agendamento
@@ -111,7 +113,14 @@ class SistemaAgendamento(MDBoxLayout):
         agendamento_card.add_widget(titulo_agendamento)
 
         # Layout para os botões de seleção
-        selection_layout = GridLayout(cols=2, spacing=20, size_hint=(None, None), width=dp(400), height=dp(200), pos_hint={'center_x': 0.5, 'center_y': 0.5})
+        selection_layout = GridLayout(
+            cols=2, 
+            spacing=20, 
+            size_hint=(None, None), 
+            width=dp(350),  # Largura fixa
+            height=dp(250),
+            pos_hint={'center_x': 0.5}
+        )
         selection_layout.add_widget(MDLabel(text='Profissional', halign='center', theme_text_color="Custom", text_color=(1, 1, 1, 1), font_style="H6"))
         selection_layout.add_widget(MDLabel(text='Serviço', halign='center', theme_text_color="Custom", text_color=(1, 1, 1, 1), font_style="H6"))
 
@@ -129,6 +138,7 @@ class SistemaAgendamento(MDBoxLayout):
         self.data_button = MDRaisedButton(text="Selecione a Data", size_hint=(None, None), width=dp(180), pos_hint={'center_x': 0.5})
         self.data_button.bind(on_release=self.show_date_picker)
         selection_layout.add_widget(self.data_button)
+        
 
         self.hora_button = MDRaisedButton(text="Selecione a Hora", size_hint=(None, None), width=dp(180), pos_hint={'center_x': 0.5})
         self.hora_button.bind(on_release=self.open_menu_horarios)
@@ -136,13 +146,14 @@ class SistemaAgendamento(MDBoxLayout):
 
         agendamento_card.add_widget(selection_layout)
 
-        # Botão de agendar ao centro
-        self.agendar_button = MDRaisedButton(text='Agendar', pos_hint={'center_x': 0.5})
+        # Botão de agendar - centralizado
+        self.agendar_button = MDRaisedButton(text='Agendar', size_hint=(None, None), width=dp(200), pos_hint={'center_x': 0.5})
         self.agendar_button.bind(on_press=self.agendar)
         agendamento_card.add_widget(self.agendar_button)
 
         self.agendamento_tab.add_widget(agendamento_card)
         self.tabs.add_widget(self.agendamento_tab)
+
 
         # Histórico Tab
         self.historico_tab = Tab(title='Histórico')
@@ -286,6 +297,7 @@ class SistemaAgendamento(MDBoxLayout):
     def show_date_picker(self, instance):
         date_picker = MDDatePicker()
         date_picker.bind(on_save=self.on_date_selected)
+        
         date_picker.open()
 
     def on_date_selected(self, instance, value, date_range):
