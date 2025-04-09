@@ -206,7 +206,7 @@ class SistemaAgendamento(MDBoxLayout):
             self.profissional_ids[p[1]] = p[0]
 
         
-        menu_width = Window.width * 0.8
+        menu_width = min(Window.width *0.8, dp(300))
 
         self.profissionais_menu = MDDropdownMenu(
         caller=self.profissional_button,
@@ -238,7 +238,7 @@ class SistemaAgendamento(MDBoxLayout):
             })
             self.servico_ids[s[1]] = s[0]
         
-        menu_width = Window.width * 0.8
+        menu_width = min(Window.width *0.8, dp(300))
 
         self.servicos_menu = MDDropdownMenu(
             caller=self.servico_button,
@@ -267,7 +267,7 @@ class SistemaAgendamento(MDBoxLayout):
             })
             self.horario_ids[h[1]] = h[0]
         
-        menu_width = Window.width * 0.8
+        menu_width = min(Window.width *0.8, dp(300))
 
         self.horarios_menu = MDDropdownMenu(
             caller=self.hora_button,
