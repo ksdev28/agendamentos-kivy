@@ -14,7 +14,9 @@ conda activate agendamentos-kivy
 
 # Atualiza o pip
 pip install --upgrade pip
+pip install kivy kivymd
 
 # Mensagem final
+echo "Kivy e Kivymd instalados!"
 echo "✅ Ambiente 'agendamentos-kivy' configurado e ativado com sucesso!"
 echo "🚀 Para iniciar o sistema, execute: python main.py"
