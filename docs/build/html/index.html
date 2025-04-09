@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Agendamento com Kivy e KivyMD &mdash; Documentação Agendamentos Kivy Estudo-2025</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=3f8df284"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=beaedd51"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Agendamentos Kivy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar docs" aria-label="Pesquisar docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Sistema de Agendamento com Kivy e KivyMD</a><ul>
+<li><a class="reference internal" href="#funcionalidades-do-sistema">### Funcionalidades do Sistema</a></li>
+<li><a class="reference internal" href="#sumario">Sumário</a></li>
+<li><a class="reference internal" href="#cadastro-de-profissionais-e-servicos">Cadastro de Profissionais e Serviços</a></li>
+<li><a class="reference internal" href="#cadastro-de-horarios">Cadastro de Horários</a></li>
+<li><a class="reference internal" href="#agendamento-de-servico">Agendamento de Serviço</a></li>
+<li><a class="reference internal" href="#historico-de-agendamentos">Histórico de Agendamentos</a></li>
+<li><a class="reference internal" href="#banco-de-dados">Banco de Dados</a></li>
+<li><a class="reference internal" href="#funcoes-utilitarias">Funções Utilitárias</a></li>
+<li><a class="reference internal" href="#conclusao">Conclusão</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Agendamentos Kivy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Sistema de Agendamento com Kivy e KivyMD</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> Ver código-fonte da página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="container"><section id="sistema-de-agendamento-com-kivy-e-kivymd">
+<h1>Sistema de Agendamento com Kivy e KivyMD<a class="headerlink" href="#sistema-de-agendamento-com-kivy-e-kivymd" title="Link to this heading"></a></h1>
+<p>Este sistema de agendamento foi desenvolvido utilizando as bibliotecas <strong>Kivy</strong> e <strong>KivyMD</strong>, com o objetivo de permitir a criação de uma interface gráfica moderna e interativa para agendar serviços de profissionais. O sistema é ideal para salões de beleza, consultórios médicos, e outros tipos de serviços que exigem o agendamento de horários.</p>
+<p>O Kivy é uma biblioteca de Python para o desenvolvimento de interfaces gráficas, com foco em facilitar a criação de aplicativos multi-touch, enquanto o KivyMD traz componentes visuais baseados no Material Design do Google, garantindo uma interface bonita e fácil de usar.</p>
+<section id="funcionalidades-do-sistema">
+<h2>### Funcionalidades do Sistema<a class="headerlink" href="#funcionalidades-do-sistema" title="Link to this heading"></a></h2>
+<p>O sistema possui as seguintes funcionalidades:</p>
+<ol class="arabic simple">
+<li><p><strong>Cadastro de Profissionais</strong>: Permite que o usuário cadastre profissionais que oferecem serviços.</p></li>
+<li><p><strong>Cadastro de Serviços</strong>: Cada profissional pode ter uma lista de serviços que ele oferece, como «Corte de Cabelo», «Massagem», etc.</p></li>
+<li><p><strong>Cadastro de Horários</strong>: O sistema permite que os profissionais cadastrem os horários disponíveis para agendamento.</p></li>
+<li><p><strong>Agendamento de Serviços</strong>: O usuário pode agendar um serviço escolhendo o profissional, o serviço, a data e a hora.</p></li>
+<li><p><strong>Histórico de Agendamentos</strong>: O sistema mantém um histórico de todos os agendamentos realizados, facilitando a consulta posterior.</p></li>
+</ol>
+</section>
+<section id="sumario">
+<h2>Sumário<a class="headerlink" href="#sumario" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="cadastro-de-profissionais-e-servicos">
+<h2>Cadastro de Profissionais e Serviços<a class="headerlink" href="#cadastro-de-profissionais-e-servicos" title="Link to this heading"></a></h2>
+<p>Nesta seção, o sistema permite o cadastro de profissionais e os serviços oferecidos por eles. Para isso, o usuário preenche os campos <strong>Nome</strong> e <strong>Serviços</strong>. A seguir, o sistema adiciona as informações no banco de dados, permitindo que o usuário visualize os profissionais e seus serviços cadastrados.</p>
+<p>O formulário de cadastro consiste em:</p>
+<ol class="arabic simple">
+<li><p><strong>Campo de Nome</strong>: Para o nome do profissional.</p></li>
+<li><p><strong>Campo de Serviços</strong>: Para a lista de serviços oferecidos, separados por vírgulas.</p></li>
+</ol>
+<p>O código para o cadastro de profissionais é o seguinte:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">cadastro_card.add_widget(MDLabel(text='Nome</span> <span class="pre">do</span> <span class="pre">Profissional',</span> <span class="pre">halign='center'))</span>
+<span class="pre">self.nome_input</span> <span class="pre">=</span> <span class="pre">MDTextField(hint_text='Nome',</span> <span class="pre">size_hint_x=1,</span> <span class="pre">pos_hint={'center_x':</span> <span class="pre">0.5})</span>
+<span class="pre">`</span></code></p>
+</section>
+<section id="cadastro-de-horarios">
+<h2>Cadastro de Horários<a class="headerlink" href="#cadastro-de-horarios" title="Link to this heading"></a></h2>
+<p>Os horários disponíveis para agendamento são cadastrados nesta aba. O sistema permite que o usuário insira horários, que são então salvos no banco de dados. Esse processo é fundamental para que o agendamento de serviços possa ser feito dentro de horários disponíveis.</p>
+<p>O formulário de horário inclui:</p>
+<ol class="arabic simple">
+<li><p><strong>Campo de Horário</strong>: Para a hora disponível no formato <strong>HH:MM</strong>.</p></li>
+</ol>
+<p>Exemplo de código para a criação do campo de horário:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">horario_card.add_widget(MDLabel(text='Cadastrar</span> <span class="pre">Horário</span> <span class="pre">(HH:MM)',</span> <span class="pre">halign='center'))</span>
+<span class="pre">self.horario_input</span> <span class="pre">=</span> <span class="pre">MDTextField(hint_text='Horário',</span> <span class="pre">size_hint_x=1,</span> <span class="pre">pos_hint={'center_x':</span> <span class="pre">0.5})</span>
+<span class="pre">`</span></code></p>
+</section>
+<section id="agendamento-de-servico">
+<h2>Agendamento de Serviço<a class="headerlink" href="#agendamento-de-servico" title="Link to this heading"></a></h2>
+<p>Na aba <strong>Agendamento</strong>, o usuário pode selecionar o <strong>profissional</strong>, o <strong>serviço</strong>, a <strong>data</strong> e o <strong>horário</strong> para o agendamento. O processo inclui a validação dos dados e a confirmação do agendamento no banco de dados, garantindo que os dados inseridos são válidos antes de serem salvos.</p>
+<p>O agendamento inclui:</p>
+<ol class="arabic simple">
+<li><p><strong>Botões de Seleção</strong>: Para selecionar o profissional, serviço, data e hora.</p></li>
+<li><p><strong>Validação</strong>: Verificação se o horário já está ocupado, para evitar conflitos de agendamento.</p></li>
+</ol>
+<p>O código para o agendamento é o seguinte:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">self.profissional_button</span> <span class="pre">=</span> <span class="pre">MDRaisedButton(text=&quot;Selecione</span> <span class="pre">o</span> <span class="pre">Profissional&quot;)</span>
+<span class="pre">self.profissional_button.bind(on_release=self.open_menu_profissionais)</span>
+<span class="pre">`</span></code></p>
+</section>
+<section id="historico-de-agendamentos">
+<h2>Histórico de Agendamentos<a class="headerlink" href="#historico-de-agendamentos" title="Link to this heading"></a></h2>
+<p>A aba <strong>Histórico</strong> exibe todos os agendamentos realizados, incluindo a data, hora, profissional e serviço. Essa funcionalidade permite que o usuário consulte os agendamentos passados e tenha um controle dos serviços prestados.</p>
+<p>Exemplo de código para carregar o histórico:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">self.historico_view</span> <span class="pre">=</span> <span class="pre">MDScrollView(size_hint=(1,</span> <span class="pre">1))</span>
+<span class="pre">self.historico_content</span> <span class="pre">=</span> <span class="pre">GridLayout(cols=1,</span> <span class="pre">size_hint_y=None)</span>
+<span class="pre">self.historico_content.bind(minimum_height=self.historico_content.setter('height'))</span>
+<span class="pre">self.historico_view.add_widget(self.historico_content)</span>
+<span class="pre">`</span></code></p>
+</section>
+<section id="banco-de-dados">
+<h2>Banco de Dados<a class="headerlink" href="#banco-de-dados" title="Link to this heading"></a></h2>
+<p>O sistema utiliza um banco de dados SQLite para armazenar os profissionais, serviços, horários e agendamentos. A interação com o banco de dados é feita através da classe <cite>Database</cite>, que oferece métodos como:</p>
+<ul class="simple">
+<li><p><strong>Cadastrar Profissional</strong>: <cite>cadastrar_profissional(nome, servicos)</cite></p></li>
+<li><p><strong>Cadastrar Horário</strong>: <cite>cadastrar_horario(hora)</cite></p></li>
+<li><p><strong>Agendar Serviço</strong>: <cite>agendar(data, hora, profissional_id, servico_id)</cite></p></li>
+<li><p><strong>Consultar Histórico</strong>: <cite>get_historico()</cite></p></li>
+</ul>
+</section>
+<section id="funcoes-utilitarias">
+<h2>Funções Utilitárias<a class="headerlink" href="#funcoes-utilitarias" title="Link to this heading"></a></h2>
+<p>O sistema inclui funções utilitárias para exibir caixas de diálogo de erro ou sucesso. A função <cite>show_dialog</cite> é utilizada para exibir mensagens ao usuário.</p>
+<p>Exemplo de código:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">show_dialog(&quot;Erro&quot;,</span> <span class="pre">&quot;Selecione</span> <span class="pre">um</span> <span class="pre">profissional.&quot;)</span>
+<span class="pre">`</span></code></p>
+</section>
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading"></a></h2>
+<p>Este sistema foi desenvolvido com o objetivo de facilitar o agendamento de serviços, utilizando uma interface amigável e moderna com o KivyMD. Ele é flexível o suficiente para ser facilmente adaptado para diferentes tipos de serviços e profissionais.</p>
+</div></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Edimundo Braga, João Marcos, Kelven Carvalho e Vanderson.</p>
+  </div>
+
+  Compilado com <a href="https://www.sphinx-doc.org/">Sphinx</a> usando um
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    fornecido por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

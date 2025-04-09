@@ -1,0 +1,20 @@
+html,
+body {
+  height: 100%; /* Garante que a página ocupe 100% da altura */
+  margin: 0; /* Remove as margens padrão */
+  display: flex; /* Usando Flexbox para centralizar o conteúdo */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  text-align: left; /* Alinha o texto à esquerda dentro do container */
+}
+
+.container {
+  width: 90% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 20px; /* Adiciona espaçamento interno */
+}
+
+body {
+  font-family: Arial, sans-serif; /* Fonte para o corpo do texto */
+}
